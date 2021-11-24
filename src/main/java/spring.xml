@@ -73,13 +73,44 @@
     	</bean> -->
     	
     	
-    	<bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName">
+  <!--   	<bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName">
     	</bean>
     	<bean id="pointA" class="com.pranesh.bean.Point">
     		<property name="x" value="10"></property>
     		<property name="y" value="20"></property>
-    	</bean>
+    	</bean> -->
     	
+    	
+<!--     	<bean id="triangle1" class="com.pranesh.bean.Triangle">
+    		<property name="type" value="Equilateral"></property>
+    	</bean>
+    	<bean id="triangle2" class="com.pranesh.bean.Triangle" parent="triangle1">
+    		<property name="height" value="10"></property>
+    	</bean> -->
+    	
+    	
+    	<bean id="triangle1" class="com.pranesh.bean.Triangle">
+    		<property name="points">
+    			<list>
+    				<ref bean="point1"/>
+    			</list>
+    		</property>
+    	</bean>
+    		<bean id="triangle2" class="com.pranesh.bean.Triangle" parent="triangle1">
+    		<property name="points">
+    			<list merge="true">
+    				<ref bean="point2"/>
+    			</list>
+    		</property>
+    	</bean>
+    	<bean id="point1" class="com.pranesh.bean.Point">
+    		<property name="x" value="10"></property>
+    		<property name="y" value="20"></property>
+    	</bean>
+    	<bean id="point2" class="com.pranesh.bean.Point">
+    		<property name="x" value="30"></property>
+    		<property name="y" value="40"></property>
+    	</bean>
     
   		   	
     	
