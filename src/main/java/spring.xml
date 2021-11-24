@@ -115,13 +115,23 @@
     	</bean> -->
     
     
-    	<bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName" init-method="myInit" destroy-method="myDestroy">
+    	<!-- <bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName" init-method="myInit" destroy-method="myDestroy">
     		<property name="type" value="Equilateral"></property>
     		<property name="height" value="20"></property>
+    	</bean> -->
+    	
+    	
+    	<bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName" init-method="myInit" destroy-method="myDestroy">
+    		<property name="type" value="${triangle.type}"></property>
+    		<property name="height" value="${triangle.height}"></property>
     	</bean>
   		   	
   		 
   		 <bean class="com.pranesh.bean.DisplayBeanPostProcessor"></bean>
+  		 <bean class="com.pranesh.bean.DisplayBeanFactoryPostProcessor"></bean>
+  		 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  		 	<property name="locations" value="config.properties"></property>
+  		 </bean>
   		 
     	
 </beans>
