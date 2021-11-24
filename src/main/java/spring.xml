@@ -1,0 +1,86 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    	
+    	
+    	<!-- <bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName">
+    		<property name="type" value="Equilateral"></property>
+    		<property name="height" value="20"></property>
+    	</bean> -->
+    	
+    	
+    	<!-- <bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName">
+    		<constructor-arg index="0" type="java.lang.String" value="Equilateral"></constructor-arg>
+    		<constructor-arg index="1" type="int" value="20"></constructor-arg>
+    	</bean> -->
+    	
+    	
+    <!-- <bean name="triangle" class="com.pranesh.bean.Triangle">
+    		<property name="pointA" ref="examplePoint"></property>
+    	</bean>
+    	<bean id="examplePoint" class="com.pranesh.bean.Point">
+    		<property name="x" value="10"></property>
+    		<property name="y" value="20"></property>
+    	</bean> -->
+    	
+    	
+    	<!-- <bean name="triangle" class="com.pranesh.bean.Triangle">
+    		<property name="pointA">
+    			<idref="examplePoint" />
+    		</property>
+    	</bean>
+    	<bean id="examplePoint" class="com.pranesh.bean.Point">
+    		<property name="x" value="10"></property>
+    		<property name="y" value="20"></property>
+    	</bean> -->
+    	
+    	
+    	<!-- <bean id="triangle" class="com.pranesh.bean.Triangle">
+    		<property name="pointA">
+    			<bean class="com.pranesh.bean.Point">
+    				<property name="x" value="10"></property>
+    				<property name="y" value="20"></property>
+    			</bean>
+    		</property>
+    	</bean> -->
+    	
+    	
+    	<!-- <bean id="triangle" class="com.pranesh.bean.Triangle" name="triangle-alias-1">
+    	</bean>
+    	<alias name="triangle" alias="triangle-alias-2"/> -->
+    	
+    	
+<!--     <bean id="triangle" class="com.pranesh.bean.Triangle">
+    		<property name="points">
+    			<list>
+    				<ref bean="point1"/>
+    				<ref bean="point2"/>
+    			</list>
+    		</property>
+    	</bean>
+    	<bean id="point1" class="com.pranesh.bean.Point">
+    		<property name="x" value="10"></property>
+    		<property name="y" value="20"></property>
+    	</bean>
+    	<bean id="point2" class="com.pranesh.bean.Point">
+    		<property name="x" value="30"></property>
+    		<property name="y" value="40"></property>
+    	</bean> -->
+    	
+    	
+    	<bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName">
+    	</bean>
+    	<bean id="pointA" class="com.pranesh.bean.Point">
+    		<property name="x" value="10"></property>
+    		<property name="y" value="20"></property>
+    	</bean>
+    	
+    
+  		   	
+    	
+</beans>
