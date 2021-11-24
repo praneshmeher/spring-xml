@@ -5,7 +5,9 @@
         http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-    	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    	http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+    	default-init-method="myInit"
+    	default-destroy-method="myDestroy">
     	
     	
     	<!-- <bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName">
@@ -113,10 +115,13 @@
     	</bean> -->
     
     
-    	<bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName" init-method="myInit">
+    	<bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName" init-method="myInit" destroy-method="myDestroy">
     		<property name="type" value="Equilateral"></property>
     		<property name="height" value="20"></property>
     	</bean>
   		   	
+  		 
+  		 <bean class="com.pranesh.bean.DisplayBeanPostProcessor"></bean>
+  		 
     	
 </beans>

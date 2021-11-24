@@ -101,6 +101,10 @@ public class Triangle implements ApplicationContextAware, BeanNameAware, Initial
 	}
 	
 	public void myInit() {
-		System.out.println("myinit");
+		System.out.println("myInit");
+	}
+	
+	public void myDestroy() {
+		System.out.println("myDestroy");
 	}
 }
