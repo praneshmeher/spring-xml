@@ -89,14 +89,14 @@
     	</bean> -->
     	
     	
-    	<bean id="triangle1" class="com.pranesh.bean.Triangle">
+    <!-- 	<bean id="triangle1" class="com.pranesh.bean.Triangle">
     		<property name="points">
     			<list>
     				<ref bean="point1"/>
     			</list>
     		</property>
     	</bean>
-    		<bean id="triangle2" class="com.pranesh.bean.Triangle" parent="triangle1">
+    		<bean id="triangle2" class="com.pranesh.bean.Triangle" parent="triangle1" >
     		<property name="points">
     			<list merge="true">
     				<ref bean="point2"/>
@@ -110,8 +110,13 @@
     	<bean id="point2" class="com.pranesh.bean.Point">
     		<property name="x" value="30"></property>
     		<property name="y" value="40"></property>
-    	</bean>
+    	</bean> -->
     
+    
+    	<bean id="triangle" class="com.pranesh.bean.Triangle" autowire="byName" init-method="myInit">
+    		<property name="type" value="Equilateral"></property>
+    		<property name="height" value="20"></property>
+    	</bean>
   		   	
     	
 </beans>

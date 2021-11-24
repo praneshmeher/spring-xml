@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware {
+public class Triangle implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean {
 	
 	
 	private String type;
@@ -70,13 +72,13 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
 	}
 	
 	public void print() {
-//		System.out.println("Triangle " + type);
-//		System.out.println("Height " + height);
+		System.out.println("Triangle: " + type);
+		System.out.println("Height: " + height);
 //		System.out.println("Point A = " + pointA.getCoordinates());
 		
-		for(Point point:points) {
-			System.out.println("Points "+point.getCoordinates());
-		}
+//		for(Point point:points) {
+//			System.out.println("Points "+point.getCoordinates());
+//		}
 	}
 
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -86,5 +88,19 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
 	public void setBeanName(String name) {
 		System.out.println("setBeanName: " + name);
 		
+	}
+
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("triangle bean initialized");
+		
+	}
+
+	public void destroy() throws Exception {
+		System.out.println("triangle bean destroyed");
+		
+	}
+	
+	public void myInit() {
+		System.out.println("myinit");
 	}
 }
